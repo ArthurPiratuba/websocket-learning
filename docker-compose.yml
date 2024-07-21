@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  web-socket:
+    build:
+      context: .
+    container_name: web-socket
+    volumes:
+      - .:/usr/src/app
+    entrypoint: sh -c "npm install && node server.js"
+    tty: true
+    ports:
+      - 5000:5000 
